@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Özerler Frigo | Soğuk Zincir Taşımacılık</title>
+    <style>
+        :root {
+            --primary: #0f628b;
+            --secondary: #2098d1;
+            --light: #f5f9fd;
+            --dark: #22343d;
+            --gray: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f9fd;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-left: 10px;
+        }
+        
+        .logo-icon {
+            font-size: 2.2rem;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ccecff;
+        }
+        
+        .hero {
+            background: linear-gradient(rgba(15, 98, 139, 0.8), rgba(15, 98, 139, 0.8)), url('/api/placeholder/1200/400') center/cover no-repeat;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #1779a9;
+        }
+        
+        .features {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary);
+            font-size: 2rem;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .feature-card {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .contact {
+            padding: 4rem 0;
+            background-color: var(--gray);
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary);
+        }
+        
+        .contact-info p {
+            margin-bottom: 1rem;
+        }
+        
+        .contact-info i {
+            color: var(--secondary);
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo, .footer-links, .footer-social {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links h4, .footer-social h4 {
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: white;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--secondary);
+        }
+        
+        .copyright {
+            padding-top: 1rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <i class="fa-solid fa-truck-container-cold logo-icon"></i>
+                    <span class="logo-text">Özerler Frigo</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#anasayfa">Ana Sayfa</a></li>
+                        <li><a href="#hizmetler">Hizmetlerimiz</a></li>
+                        <li><a href="#hakkimizda">Hakkımızda</a></li>
+                        <li><a href="#iletisim">İletişim</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="anasayfa">
+        <div class="container">
+            <h1>Soğuk Zincir Taşımacılıkta Güvenilir Çözüm Ortağınız</h1>
+            <p>Özerler Frigo olarak, frigorifik taşımacılık alanında yılların deneyimi ile müşterilerimize kaliteli ve güvenilir hizmet sunuyoruz. Türkiye'nin dört bir yanına ve uluslararası taşımacılık hizmetleri veriyoruz.</p>
+            <a href="#iletisim" class="btn">Bizimle İletişime Geçin</a>
+        </div>
+    </section>
+
+    <section class="features" id="hizmetler">
+        <div class="container">
+            <h2 class="section-title">Hizmetlerimiz</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fa-solid fa-temperature-low feature-icon"></i>
+                    <h3 class="feature-title">Frigorifik Taşımacılık</h3>
+                    <p>Sıcaklık kontrollü taşımacılık hizmetimiz ile gıda ve diğer hassas ürünlerinizi güvenle taşıyoruz.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-globe feature-icon"></i>
+                    <h3 class="feature-title">Uluslararası Nakliyat</h3>
+                    <p>Avrupa ve Orta Doğu ülkelerine güvenilir ve hızlı soğuk zincir taşımacılık hizmeti.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-map-location-dot feature-icon"></i>
+                    <h3 class="feature-title">Yurt İçi Dağıtım</h3>
+                    <p>Türkiye'nin her noktasına zamanında ve güvenli teslimat garantisi ile hizmet veriyoruz.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="iletisim">
+        <div class="container">
+            <h2 class="section-title">İletişim</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Adres Bilgilerimiz</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> Şevketsümer Mah. Turgut Özal Bulvarı Blv.</p>
+                    <p><i class="fa-solid fa-building"></i> Emmare Tır Garajı Öztürk Vinç No: 26 A</p>
+                    <p><i class="fa-solid fa-city"></i> Akdeniz / Mersin</p>
+                </div>
+                <div class="contact-info">
+                    <h3>İletişim Bilgilerimiz</h3>
+                    <p><i class="fa-solid fa-phone"></i> 0552 626 60 25</p>
+                    <p><i class="fa-solid fa-mobile-screen"></i> 0553 864 33 56</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@ozerlerfrigo.com</p>
+                    <p><i class="fa-solid fa-clock"></i> Pazartesi - Cumartesi: 08:00 - 18:00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-truck-container-cold logo-icon"></i>
+                    <h3>Özerler Frigo</h3>
+                    <p>Soğuk zincir taşımacılıkta güvenilir çözüm ortağınız.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Hızlı Erişim</h4>
+                    <ul>
+                        <li><a href="#anasayfa">Ana Sayfa</a></li>
+                        <li><a href="#hizmetler">Hizmetlerimiz</a></li>
+                        <li><a href="#hakkimizda">Hakkımızda</a></li>
+                        <li><a href="#iletisim">İletişim</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Sosyal Medya</h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Özerler Frigo. Tüm hakları saklıdır.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
